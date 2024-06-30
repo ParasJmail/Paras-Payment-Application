@@ -8,7 +8,7 @@ import {Signup} from "./pages/Signup.jsx"
 import {Signin} from "./pages/Signin.jsx"
 import {Dashboard} from "./pages/Dashboard.jsx"
 import {SendMoney} from "./pages/SendMoney.jsx"
-
+import ProtectedRoute from "./components/ProtectedRoute.jsx"
 
 function App() {
 
@@ -16,10 +16,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/signup' element={<Signup />} />
+          <Route path='/' element={<Signup />} />
           <Route path='/signin' element={<Signin />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/send' element={<SendMoney />} />
+          <Route path='/send' element={<ProtectedRoute><SendMoney /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
     </>
